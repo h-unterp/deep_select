@@ -1,4 +1,4 @@
-import 'package:deep_select/second.dart';
+import 'package:deep_select/editUser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
@@ -19,9 +19,9 @@ class _SideState extends ConsumerState<Side> {
         child: Center(
       child: TextButton(
         onPressed: () {
-          pushNewScreen(context, screen: const Second(title: "s"));
+          pushNewScreen(context, screen: const EditUser(title: "s"));
         },
-        child: const Text("Second"),
+        child: const Text("Edit User"),
       ),
     ));
   }

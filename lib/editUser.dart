@@ -2,16 +2,16 @@ import 'package:deep_select/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Second extends ConsumerStatefulWidget {
-  const Second({super.key, required this.title});
+class EditUser extends ConsumerStatefulWidget {
+  const EditUser({super.key, required this.title});
 
   final String title;
 
   @override
-  ConsumerState<Second> createState() => _SecondState();
+  ConsumerState<EditUser> createState() => _EditUserState();
 }
 
-class _SecondState extends ConsumerState<Second> {
+class _EditUserState extends ConsumerState<EditUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _SecondState extends ConsumerState<Second> {
       ),
       body: const Center(
         child: Text(
-          "Second Page?",
+          "EditUser Page?",
         ),
       ),
       floatingActionButton: FloatingActionButton(
