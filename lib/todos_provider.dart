@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class TodosNotifier extends StateNotifier<AsyncValue<String>> {
-  TodosNotifier() : super(const AsyncLoading());
+  TodosNotifier() : super(const AsyncValue.data("INIT"));
 
   void toggle() async {
     state = const AsyncLoading();
