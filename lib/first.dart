@@ -1,9 +1,7 @@
-import 'package:deep_select/second.dart';
 import 'package:deep_select/sidebar.dart';
 import 'package:deep_select/todos_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
 class First extends ConsumerStatefulWidget {
   const First({super.key, required this.title});
@@ -17,8 +15,7 @@ class First extends ConsumerStatefulWidget {
 class _FirstState extends ConsumerState<First> {
   @override
   Widget build(BuildContext context) {
-
-    String? description = ref.watch(todosProvider).data!.description;
+    String? description = ref.watch(todosProvider).value ?? "INIT";
 
     return Scaffold(
       appBar: AppBar(
@@ -30,7 +27,7 @@ class _FirstState extends ConsumerState<First> {
         child: Center(
           child: Column(
             children: [
-              Text(description!, style: const TextStyle(fontSize: 30)),
+              Text(description, style: const TextStyle(fontSize: 30)),
             ],
           ),
         ),
