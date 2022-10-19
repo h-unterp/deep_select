@@ -18,10 +18,6 @@ class _FirstState extends ConsumerState<First> {
     String? description = ref.watch(todosProvider).value ?? "INIT";
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      drawer: const Side(title: "s"),
       body: Padding(
         padding: const EdgeInsets.all(50.0),
         child: Center(

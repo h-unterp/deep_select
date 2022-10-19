@@ -107,20 +107,24 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return ref.watch(todosProvider).when(
-      data: (data) {
-        return _buildTabs();
-      },
-      loading: () {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
-      error: (error, stackTrace) {
-        return const Center(
-          child: Text("error"),
-        );
-      },
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: const Side(title: "s"),
+      body: ref.watch(todosProvider).when(
+        data: (data) {
+          return _buildTabs();
+        },
+        loading: () {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+        error: (error, stackTrace) {
+          return const Center(
+            child: Text("error"),
+          );
+        },
+      ),
     );
   }
 }
