@@ -17,6 +17,7 @@ dependencies:
   persistent_bottom_nav_bar_v2: ^4.2.4
   convex_bottom_bar: ^3.1.0+1
   badges: ^2.0.3
+  navbar_router: ^0.3.2
 
 dev_dependencies:
   flutter_test:

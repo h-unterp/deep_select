@@ -1,12 +1,10 @@
-import 'package:deep_select/sidebar.dart';
 import 'package:deep_select/auth_provider.dart';
+import 'package:deep_select/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class First extends ConsumerStatefulWidget {
-  const First({super.key, required this.title});
-
-  final String title;
+  const First({super.key});
 
   @override
   ConsumerState<First> createState() => _FirstState();
@@ -19,8 +17,7 @@ class _FirstState extends ConsumerState<First> {
 
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text('First'),
+        title: const Text("first"),
       ),
       drawer: const Side(),
       body: Padding(

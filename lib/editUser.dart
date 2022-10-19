@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class EditUser extends ConsumerStatefulWidget {
-  const EditUser({super.key, required this.title});
-
-  final String title;
+  const EditUser({super.key});
 
   @override
   ConsumerState<EditUser> createState() => _EditUserState();
@@ -16,7 +14,7 @@ class _EditUserState extends ConsumerState<EditUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text("edit"),
       ),
       body: const Center(
         child: Text(

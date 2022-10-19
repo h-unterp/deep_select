@@ -17,7 +17,7 @@ class _SideState extends ConsumerState<Side> {
         child: Center(
       child: TextButton(
         onPressed: () {
-          pushNewScreen(context, screen: const EditUser(title: "s"));
+          pushNewScreen(context, screen: const EditUser());
         },
         child: const Text("Edit User"),
       ),

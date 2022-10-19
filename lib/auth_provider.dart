@@ -12,7 +12,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<String>> {
   void toggle() async {
     state = const AsyncLoading();
     await Future.delayed(const Duration(seconds: 1));
-    state = const AsyncData("DONE");
+    state = const AsyncData("DONE DONE");
   }
 }
 
