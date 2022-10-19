@@ -1,8 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:deep_select/first.dart';
-import 'package:deep_select/second.dart';
-import 'package:deep_select/sidebar.dart';
-import 'package:deep_select/todos_provider.dart';
+import 'package:deep_select/auth_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -50,7 +48,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
         routeAndNavigatorSettings:
             const RouteAndNavigatorSettings(initialRoute: '/'),
         icon: Badge(
-            showBadge: ref.watch(todosProvider).value! == "changed",
+            showBadge: ref.watch(authProvider).value! == "changed",
             animationType: BadgeAnimationType.scale,
             badgeColor: const Color.fromARGB(255, 255, 0, 0),
             toAnimate: true,
@@ -107,24 +105,20 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      drawer: const Side(title: "s"),
-      body: ref.watch(todosProvider).when(
-        data: (data) {
-          return _buildTabs();
-        },
-        loading: () {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        },
-        error: (error, stackTrace) {
-          return const Center(
-            child: Text("error"),
-          );
-        },
-      ),
+    return ref.watch(authProvider).when(
+      data: (data) {
+        return _buildTabs();
+      },
+      loading: () {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+      error: (error, stackTrace) {
+        return const Center(
+          child: Text("error"),
+        );
+      },
     );
   }
 }

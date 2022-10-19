@@ -1,4 +1,4 @@
-import 'package:deep_select/todos_provider.dart';
+import 'package:deep_select/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -25,7 +25,7 @@ class _SecondState extends ConsumerState<Second> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ref.read(todosProvider.notifier).toggle();
+          ref.read(authProvider.notifier).toggle();
         },
         child: const Text("update"),
       ),
