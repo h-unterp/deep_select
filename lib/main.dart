@@ -42,6 +42,14 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
   final PersistentTabController _controller =
       PersistentTabController(initialIndex: 0);
 
+  @override
+  initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(authProvider.notifier).init();
+    });
+  }
+
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
