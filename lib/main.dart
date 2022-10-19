@@ -70,6 +70,13 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+        AsyncSnapshot<Todo> x = ref.watch(todosProvider);
+    if (x.connectionState == ConnectionState.waiting) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+
     return Scaffold(
       body: PersistentTabView(
         context,

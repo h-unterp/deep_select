@@ -17,12 +17,6 @@ class First extends ConsumerStatefulWidget {
 class _FirstState extends ConsumerState<First> {
   @override
   Widget build(BuildContext context) {
-    AsyncSnapshot<Todo> x = ref.watch(todosProvider);
-    if (x.connectionState == ConnectionState.waiting) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    }
 
     String? description = ref.watch(todosProvider).data!.description;
 
