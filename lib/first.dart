@@ -19,9 +19,10 @@ class _FirstState extends ConsumerState<First> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        centerTitle: true,
+        title: const Text('First'),
       ),
-      drawer: const Side(title: "s"),
+      drawer: const Side(),
       body: Padding(
         padding: const EdgeInsets.all(50.0),
         child: Center(
